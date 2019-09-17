@@ -13,7 +13,9 @@ Artists::Type = GraphQL::ObjectType.define do
   field :updated_at, types.String
   field :first_name, types.String
   field :last_name, types.String
-  field :nickname, types.String
+  field :nickname, !types.String
   field :description, types.String
   field :preview_artwork_id, types.String
+  field :preview_artwork, Artworks::Type
+
 end

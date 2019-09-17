@@ -16,4 +16,6 @@ class Artist < ApplicationRecord
 
   has_many :exhibitions
   has_many :artworks
+
+  has_one :preview_artwork, class_name: 'Artwork'
 end
