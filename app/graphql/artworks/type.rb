@@ -7,7 +7,7 @@ Artworks::Type = GraphQL::ObjectType.define do
   field :exhibitions, types[Exhibitions::Type]
   field :created_at, types.String
   field :updated_at, types.String
-  field :image_url, types.String
+  field :image_url, !types.String
   field :title, types.String
   field :description, types.String
   field :techniques, types.String
