@@ -20,4 +20,10 @@ class Artwork < ApplicationRecord
   has_many :exposed_artworks
   has_many :exhibitions, through: :exposed_artworks
   belongs_to :artist
+
+  after_save :set_as_preview_artwork
+
+  def set_as_preview_artwork
+    self.artist&.update(preview_artwork_id: self.id) if self.artist&.preview_artwork_id.blank?
+  end
 end
